@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "run_our_method",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/experiments/run_our_method.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/experiments",
+            "args": "--all_methods --beam_search_size 10 --num_final_multiplies 1 --dataset sift-128-euclidean > ${workspaceFolder}/experiments/output.txt"
+        },
+    ]
+}
