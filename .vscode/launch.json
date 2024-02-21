@@ -6,12 +6,34 @@
     "configurations": [
         {
             "name": "run_our_method",
-            "type": "debugpy",
+            "type": "pythoncpp",
+            "request": "launch",
+            "pythonLaunchName": "Python: Current File",
+            "cppAttachName": "(gdb) Attach"
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "/home/admin1/anaconda3/bin/python",
+            "processId": "",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/experiments/run_our_method.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/experiments",
             "args": "--all_methods --beam_search_size 10 --num_final_multiplies 1 --dataset sift-128-euclidean > ${workspaceFolder}/experiments/output.txt"
-        },
+        }
     ]
 }
