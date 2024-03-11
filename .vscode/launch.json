@@ -5,9 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python C++ Debugger",
+            "type": "pythoncpp",
+            "request": "launch",
+            "pythonLaunchName": "run_our_method",
+            "cppAttachName": "(gdb) Attach"
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "/home/kevin/anaconda3/envs/rangeann/bin/python", // 你的python解释器路径
+            "processId": "",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "run_our_method",
             "type": "debugpy",
             "request": "launch",
+            "python": "${command:python.interpreterPath}",
             "program": "${workspaceFolder}/experiments/run_our_method.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/experiments",
